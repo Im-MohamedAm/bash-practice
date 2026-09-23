@@ -1,7 +1,0 @@
-target: google.com
-reachable
-;; Got recursion not available from 192.168.1.1, trying next server
-;; communications error to fd17:625c:f037:2::3#53: network unreachable
-;; communications error to fd17:625c:f037:2::3#53: network unreachable
-;; communications error to fd17:625c:f037:2::3#53: network unreachable
-;; no servers could be reached
