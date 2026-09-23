@@ -1,3 +1,0 @@
-the target is : 172.0.0.1
-the port we work on is : 80
-closed
