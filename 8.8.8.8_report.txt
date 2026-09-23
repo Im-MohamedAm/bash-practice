@@ -1,5 +1,0 @@
-target: 8.8.8.8
-reachable
-8.8.8.8.in-addr.arpa	name = dns.google.
-
-Authoritative answers can be found from:
