@@ -1,30 +1,34 @@
 #!/bin/bash
-if [ $# -eq 1 ]; then
 
-echo "Target: $1 "
-echo "target : $1" > "$1_report.txt"
+while true
+do
+    echo "Enter a website name:"
+    read target
 
-if ping -c 5 "$1" > /dev/null ; then
+    echo "Target: $target"
+    echo "target: $target" > "$target"_report.txt
 
-echo "reachable"
-echo " reachable" >> "$1_report.txt"
-else
-echo "not reachable"
-echo "not reachable" >> "$1_report.txt"
+    if ping -c 5 "$target" > /dev/null 2>&1; then
+        echo "reachable"
+        echo "reachable" >> "$target"_report.txt
+    else
+        echo "not reachable"
+        echo "not reachable" >> "$target"_report.txt
+    fi
 
-fi
+    echo "DNS information on $target:"
+    X=$(nslookup "$target")
+    echo "$X"
+    echo "$X" >> "$target"_report.txt
 
-echo "DNS information on $1 :"
-X=$( nslookup "$1")
-echo "$X"
+    echo "The information was transmitted to this file: $target"_report.txt
+    echo "Report saved"
+    echo "Recon complete"
 
+    echo "Do you want to analyze another website? (y/n)"
+    read answer
 
-echo "$X"  >> "$1_report.txt"
-
-
-echo "the information was transmitted to this file $1_report.txt "
-echo "report saved"
-echo "recon complete"
-else
-echo "please provide a website name Ex= (google.com)"
-fi
+    if [ "$answer" = "n" ]; then
+        break
+    fi
+done
