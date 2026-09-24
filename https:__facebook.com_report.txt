@@ -1,3 +1,0 @@
-Target : https://facebook.com
-Status Code : 301
-Status : Online, but redirected to another URL
