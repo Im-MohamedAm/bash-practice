@@ -2,7 +2,7 @@
 
 LOG="$1"
 
-if [[ ! -f "$LOG" ]]; then
+if [[  ! -f "$LOG" ]]; then
     echo "Error: log file not found."
     exit 1
 fi
